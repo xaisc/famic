@@ -34,6 +34,8 @@ define Package/default-settings/install
 	$(INSTALL_BIN) ./files/zzz-default-settings $(1)/etc/uci-defaults/99-default-settings
 	$(INSTALL_DIR) $(1)/usr/lib/lua/luci/i18n
 	po2lmo ./po/zh-cn/default.po $(1)/usr/lib/lua/luci/i18n/default.zh-cn.lmo
+	$(INSTALL_DIR) $(1)/etc/config
+	$(INSTALL_BIN) ./files/smartdns.famic $(1)/etc/config/smartdns.famic
 endef
 
 $(eval $(call BuildPackage,default-settings))
