@@ -1,0 +1,124 @@
+
+config smartdns
+	option enabled '1'
+	option server_name 'smartdns'
+	option port '6053'
+	option tcp_server '1'
+	option ipv6_server '1'
+	option dualstack_ip_selection '1'
+	option prefetch_domain '1'
+	option serve_expired '1'
+	option cache_size '40960'
+	option resolve_local_hostnames '0'
+	option auto_set_dnsmasq '0'
+	option force_aaaa_soa '1'
+	option force_https_soa '1'
+	option rr_ttl_min '300'
+	option rr_ttl_max '3600'
+	option seconddns_tcp_server '1'
+	option seconddns_no_rule_addr '0'
+	option seconddns_no_rule_nameserver '0'
+	option seconddns_no_rule_ipset '0'
+	option seconddns_no_rule_soa '0'
+	option seconddns_no_dualstack_selection '0'
+	option seconddns_no_cache '0'
+	option seconddns_force_aaaa_soa '0'
+	option coredump '0'
+	option seconddns_enabled '1'
+	option seconddns_port '5335'
+	option seconddns_server_group 'Oversea'
+	option seconddns_no_speed_check '1'
+	option old_port '6053'
+
+config server
+	option enabled '1'
+	option type 'udp'
+	option name '114DNS'
+	option ip '114.114.114.114'
+	option server_group 'China'
+	option blacklist_ip '0'
+
+config server
+	option enabled '1'
+	option type 'udp'
+	option name '阿里DNS'
+	option ip '223.5.5.5'
+	option server_group 'China'
+	option blacklist_ip '0'
+
+config server
+	option enabled '1'
+	option type 'udp'
+	option name '百度DNS'
+	option ip '180.76.76.76'
+	option server_group 'China'
+	option blacklist_ip '0'
+
+config server
+	option enabled '1'
+	option type 'udp'
+	option name '腾讯DNS'
+	option ip '119.29.29.29'
+	option server_group 'China'
+	option blacklist_ip '0'
+
+config server
+	option enabled '1'
+	option type 'udp'
+	option name 'CNNIC SDNS'
+	option ip '1.2.4.8'
+	option server_group 'China'
+	option blacklist_ip '0'
+
+config server
+	option enabled '1'
+	option ip '8.8.8.8'
+	option name 'Google DNS（TLS）'
+	option type 'tls'
+	option server_group 'Oversea'
+	option blacklist_ip '0'
+	option no_check_certificate '0'
+
+config server
+	option enabled '1'
+	option name 'Google DNS（TCP）'
+	option ip '8.8.8.8'
+	option type 'tcp'
+	option server_group 'Oversea'
+	option blacklist_ip '0'
+
+config server
+	option enabled '1'
+	option ip 'https://dns.google/dns-query'
+	option type 'https'
+	option name 'Google DNS（Https）'
+	option server_group 'Oversea'
+	option blacklist_ip '0'
+	option no_check_certificate '0'
+
+config server
+	option enabled '1'
+	option ip '208.67.222.222'
+	option name 'Open DNS（TCP）'
+	option type 'tcp'
+	option server_group 'Oversea'
+	option blacklist_ip '0'
+
+config server
+	option enabled '1'
+	option name 'Open DNS（TLS）'
+	option ip '208.67.222.222'
+	option type 'tls'
+	option server_group 'Oversea'
+	option blacklist_ip '0'
+	option no_check_certificate '0'
+
+config server
+	option enabled '1'
+	option name 'Open DNS（Https）'
+	option ip 'https://doh.opendns.com/dns-query'
+	option type 'https'
+	option server_group 'Oversea'
+	option blacklist_ip '0'
+	option no_check_certificate '0'
+
