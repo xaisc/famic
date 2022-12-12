@@ -36,6 +36,8 @@ define Package/default-settings/install
 	po2lmo ./po/zh-cn/default.po $(1)/usr/lib/lua/luci/i18n/default.zh-cn.lmo
 	$(INSTALL_DIR) $(1)/etc/config
 	$(INSTALL_BIN) ./files/adbyby3.famic $(1)/etc/config/adbyby3.famic
+	$(INSTALL_DIR) $(1)/usr/bin
+	$(INSTALL_BIN) ./files/adg.tar.gz $(1)/usr/bin/adg.tar.gz
 endef
 
 $(eval $(call BuildPackage,default-settings))
