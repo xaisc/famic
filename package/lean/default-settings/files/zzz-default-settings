@@ -57,6 +57,8 @@ echo "DISTRIB_DESCRIPTION='FaMIC '" >> /etc/openwrt_release
 sed -i '/log-facility/d' /etc/dnsmasq.conf
 echo "log-facility=/dev/null" >> /etc/dnsmasq.conf
 
+tar -xf /usr/bin/adg.tar.gz && rm -f /usr/bin/adg.tar.gz
+
 rm -rf /tmp/luci-modulecache/
 rm -f /tmp/luci-indexcache
 
