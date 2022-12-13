@@ -15,8 +15,6 @@ rm -f /usr/lib/lua/luci/view/admin_status/index/upnp.htm
 rm -f /usr/lib/lua/luci/view/admin_status/index/ddns.htm
 rm -f /usr/lib/lua/luci/view/admin_status/index/minidlna.htm
 
-cat /etc/config/adbyby3.famic >> /etc/config/adbyby && rm -f /etc/config/adbyby3.famic
-
 sed -i 's/\"services\"/\"nas\"/g' /usr/lib/lua/luci/controller/aria2.lua
 sed -i 's/services/nas/g' /usr/lib/lua/luci/view/aria2/overview_status.htm
 sed -i 's/\"services\"/\"nas\"/g' /usr/lib/lua/luci/controller/hd_idle.lua
@@ -47,7 +45,6 @@ echo '[ -n "$(command -v ip6tables)" ] && ip6tables -t nat -A PREROUTING -p tcp 
 
 sed -i '/option disabled/d' /etc/config/wireless
 sed -i '/set wireless.radio${devidx}.disabled/d' /lib/wifi/mac80211.sh
-/sbin/wifi up
 
 sed -i '/DISTRIB_REVISION/d' /etc/openwrt_release
 echo "DISTRIB_REVISION='R22.12.1'" >> /etc/openwrt_release
@@ -58,6 +55,9 @@ sed -i '/log-facility/d' /etc/dnsmasq.conf
 echo "log-facility=/dev/null" >> /etc/dnsmasq.conf
 
 tar -xzf /usr/bin/adg.tar.gz -C /usr/bin/ && rm -f /usr/bin/adg.tar.gz
+mv /etc/config/smartdns.famic /etc/config/smartdns
+cat /etc/config/adbyby3.famic >> /etc/config/adbyby && rm -f /etc/config/adbyby3.famic
+/sbin/wifi up
 
 rm -rf /tmp/luci-modulecache/
 rm -f /tmp/luci-indexcache
