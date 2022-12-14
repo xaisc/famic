@@ -57,6 +57,7 @@ echo "log-facility=/dev/null" >> /etc/dnsmasq.conf
 tar -xzf /usr/bin/adg.tar.gz -C /usr/bin/ && rm -f /usr/bin/adg.tar.gz
 mv /etc/config/smartdns.famic /etc/config/smartdns
 cat /etc/config/adbyby3.famic >> /etc/config/adbyby && rm -f /etc/config/adbyby3.famic
+cat /etc/dnsmasq.famic >> /etc/dnsmasq.conf && rm -f /etc/dnsmasq.famic
 /sbin/wifi up
 
 rm -rf /tmp/luci-modulecache/
