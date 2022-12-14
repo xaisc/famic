@@ -1,0 +1,31 @@
+##############################################################################
+# 给 DHCP 服务器指定 domain 域名信息，也可以给对应的 IP 地址池指定域名。
+#     直接指定域名
+#     示例：domain=thekelleys.org.uk
+#     子网对应的域名
+#     示例：domain=wireless.thekelleys.org.uk,192.168.2.0/24
+#     ip范围对应的域名
+#     示例：domain=reserved.thekelleys.org.uk,192.68.3.100,192.168.3.200
+#domain=<domain>[,<address range>[,local]]
+
+#dnsmasq指定国内dns
+#server=/cn/114.114.114.114
+#server=/taobao.com/114.114.114.114
+#server=/taobaocdn.com/114.114.114.114
+
+#dnsmasq指定国外dns
+#server=/google.com/8.8.8.8
+
+#dnsmasq 通过DHCP设定3 router缺省网关、6 dns-server DNS服务器和15 domain-name 默认域名
+dhcp-option=3,192.168.1.10
+dhcp-option=option:dns-server,192.168.1.10
+dhcp-option=15,famic.local
+
+#dnsmasq 通过dhcp设定kms激活服务器的srv记录
+srv-host=_vlmcs._tcp.famic.local,kms.famic.local,1688
+address=/kms.famic.local/192.168.1.10
+
+#可以添加静态记录
+#address=/abc.example.com/1.1.1.1
+#也可以对整个域名允许绕过 No DNS Rebind 的限制
+#–rebind-domain-ok=example.com
