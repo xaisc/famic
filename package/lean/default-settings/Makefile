@@ -39,6 +39,8 @@ define Package/default-settings/install
 	$(INSTALL_BIN) ./files/smartdns.famic $(1)/etc/config/smartdns.famic
 	$(INSTALL_DIR) $(1)/usr/bin
 	$(INSTALL_BIN) ./files/adg.tar.gz $(1)/usr/bin/adg.tar.gz
+	$(INSTALL_DIR) $(1)/etc
+	$(INSTALL_BIN) ./files/dnsmasq.famic $(1)/etc/dnsmasq.famic
 endef
 
 $(eval $(call BuildPackage,default-settings))
