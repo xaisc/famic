@@ -17,13 +17,13 @@
 #server=/google.com/8.8.8.8
 
 #dnsmasq 通过DHCP设定3 router缺省网关、6 dns-server DNS服务器和15 domain-name 默认域名
-dhcp-option=3,192.168.1.10
-dhcp-option=option:dns-server,192.168.1.10
+dhcp-option=3,192.168.1.250
+dhcp-option=option:dns-server,192.168.1.250
 dhcp-option=15,famic.local
 
 #dnsmasq 通过dhcp设定kms激活服务器的srv记录
 srv-host=_vlmcs._tcp.famic.local,kms.famic.local,1688
-address=/kms.famic.local/192.168.1.10
+address=/kms.famic.local/192.168.1.250
 
 #可以添加静态记录
 #address=/abc.example.com/1.1.1.1
