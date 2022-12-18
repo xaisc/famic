@@ -60,6 +60,17 @@ cat /etc/config/adbyby3.famic >> /etc/config/adbyby && rm -f /etc/config/adbyby3
 cat /etc/dnsmasq.famic >> /etc/dnsmasq.conf && rm -f /etc/dnsmasq.famic
 /sbin/wifi up
 
+#adguardhome 设为53端口替换dnsmasq
+uci add_list dhcp.@dnsmasq[0].server='223.5.5.5'
+uci add_list dhcp.@dnsmasq[0].server='114.114.114.114'
+uci add_list dhcp.@dnsmasq[0].server='211.137.130.3'
+uci add_list dhcp.@dnsmasq[0].server='2409:8070:2000:f000::1'
+uci add_list dhcp.@dnsmasq[0].server='211.137.130.19'
+uci add_list dhcp.@dnsmasq[0].server='2409:8070:2000:f100::1'
+uci set dhcp.@dnsmasq[0].port='5553'
+uci set dhcp.@dnsmasq[0].cachesize='0'
+uci commit dhcp
+
 rm -rf /tmp/luci-modulecache/
 rm -f /tmp/luci-indexcache
 
