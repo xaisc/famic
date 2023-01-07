@@ -64,14 +64,6 @@ config server
 
 config server
 	option enabled '1'
-	option type 'udp'
-	option name 'CNNIC SDNS'
-	option ip '1.2.4.8'
-	option server_group 'China'
-	option blacklist_ip '0'
-
-config server
-	option enabled '1'
 	option ip '8.8.8.8'
 	option name 'Google DNS（TLS）'
 	option type 'tls'
